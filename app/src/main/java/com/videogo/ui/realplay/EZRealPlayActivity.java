@@ -1276,7 +1276,7 @@ public class EZRealPlayActivity extends RootActivity implements OnClickListener,
             case R.id.realplay_talk_btn:
             case R.id.realplay_talk_btn2:
             case R.id.realplay_full_talk_btn:
-                //startVoiceTalk();
+                startVoiceTalk();
                 checkAndRequestPermission();
                 selectTalkbackItems();
                 break;

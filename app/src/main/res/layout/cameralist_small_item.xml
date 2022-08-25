@@ -126,11 +126,10 @@
                     android:id="@+id/tab_alarmlist_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_centerHorizontal="true"
                     android:background="@null"
                     android:gravity="center"
                     android:src="@drawable/open_cameralist_alarmlist_selector" />
-            </RelativeLayout>            
+            </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/tab_setdevice_rl"
                 android:layout_width="fill_parent"
@@ -146,10 +145,9 @@
                     android:id="@+id/tab_setdevice_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_centerHorizontal="true"
                     android:background="@null"
                     android:gravity="center"
-                    android:src="@drawable/open_cameralist_setup_selector"/>
+                    android:src="@drawable/open_cameralist_setup_selector" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/tab_video_talk_rl"
@@ -166,10 +164,9 @@
                     android:id="@+id/tab_video_talk_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
-                    android:background="@null"
+                    android:background="@null"  
                     android:gravity="center"
-                    android:src="@drawable/play_video"/>
+                    android:src="@drawable/play_video" />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout

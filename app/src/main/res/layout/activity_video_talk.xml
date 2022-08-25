@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="房间ID: "/>
+                android:text="Room ID: " />
 
             <EditText
                 android:id="@+id/video_talk_et_room_id"
@@ -87,19 +87,19 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="创建房间"
+                android:text="Create"
                 android:onClick="onClickCreateRoom"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="加入房间"
+                android:text="Join"
                 android:onClick="onClickJoinRoom"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="离开房间"
+                android:text="Leave"
                 android:onClick="onClickLeaveRoom"/>
 
         </LinearLayout>
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
-            android:text="安全帽测试"/>
+            android:text="Call test"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -125,13 +125,13 @@
                 android:id="@+id/btn_hat_video_caller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="音视频呼叫" />
+                android:text="Audio and video call" />
 
             <Button
                 android:id="@+id/btn_hat_audio_caller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="纯音频呼叫" />
+                android:text="Audio only Call" />
         </LinearLayout>
 
     </LinearLayout>

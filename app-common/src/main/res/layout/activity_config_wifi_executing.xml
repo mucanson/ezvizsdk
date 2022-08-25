@@ -108,8 +108,8 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:visibility="visible">
 
             <ImageView
@@ -120,10 +120,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/failed_to_config_wifi"
-                android:textColor="@color/red"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:text="@string/failed_to_config_wifi"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/app_common_all_config_error_info"
@@ -131,17 +131,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp"
-                android:textSize="10dp"
                 android:text="这里用于展示具体的错误信息"
                 android:textColor="@color/red"
-                android:textStyle="bold"/>
+                android:textSize="10dp"
+                android:textStyle="bold" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/content_text_size"
+                android:onClick="onClickRetryConfigWifi"
                 android:text="@string/try_again"
-                android:onClick="onClickRetryConfigWifi"/>
+                android:textSize="@dimen/content_text_size" />
 
         </LinearLayout>
 

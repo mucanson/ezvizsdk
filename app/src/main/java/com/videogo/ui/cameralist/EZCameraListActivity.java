@@ -208,12 +208,12 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
             }
         });
 
-        findViewById(R.id.btn_multi_screen_preview).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MultiScreenPreviewActivity.Companion.launch(v.getContext());
-            }
-        });
+//        findViewById(R.id.btn_multi_screen_preview).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                MultiScreenPreviewActivity.Companion.launch(v.getContext());
+//            }
+//        });
 
         mAddBtn.setOnClickListener(new OnClickListener() {
             @Override

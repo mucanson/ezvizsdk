@@ -9,8 +9,7 @@
     <com.videogo.widget.TitleBar
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <RelativeLayout
         android:id="@+id/inputLinearlayout"
@@ -97,14 +96,13 @@
             android:layout_height="50dp"
             android:layout_below="@id/verifycodeEditTextContainer"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="40dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/login_btn_selector"
             android:onClick="onClick"
             android:scaleType="fitCenter"
             android:text="@string/next_button_txt"
-            android:textColor="@color/white"
-            />
+            android:textColor="@color/white" />
 
         <TextView
             android:layout_width="match_parent"
@@ -292,10 +290,10 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/title_bar"
+        android:layout_marginTop="0dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:visibility="visible"
-        >
+        android:visibility="visible">
 
         <!-- android:background="@drawable/input_shade" -->
 
@@ -304,8 +302,7 @@
             android:layout_width="150dp"
             android:layout_height="165dp"
             android:layout_marginTop="35dp"
-            android:background="@anim/device_search_bg"
-            />
+            android:background="@anim/device_search_bg" />
 
     </LinearLayout>
 
