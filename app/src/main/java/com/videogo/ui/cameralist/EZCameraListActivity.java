@@ -45,7 +45,7 @@ import android.widget.Toast;
 
 import com.ez.stream.EZStreamClientManager;
 import com.ezviz.demo.common.CollectDeviceInfoActivity;
-import com.ezviz.demo.common.MoreFeaturesEntranceActivity;
+//import com.ezviz.demo.common.MoreFeaturesEntranceActivity;
 import com.ezviz.demo.videotalk.WatchVideoTalkActivity;
 import com.google.gson.Gson;
 import com.videogo.constant.Constant;
@@ -87,7 +87,7 @@ import java.util.Date;
 import java.util.List;
 
 import ezviz.ezopensdk.R;
-import ezviz.ezopensdk.debug.TestActivityForFullSdk;
+//import ezviz.ezopensdk.debug.TestActivityForFullSdk;
 import ezviz.ezopensdk.demo.DemoConfig;
 import ezviz.ezopensdk.demo.SdkInitParams;
 import ezviz.ezopensdk.demo.SpTool;
@@ -176,9 +176,9 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (DemoConfig.isNeedJumpToTestPage) {
-            startActivity(new Intent(mContext, TestActivityForFullSdk.class));
-        }
+//        if (DemoConfig.isNeedJumpToTestPage) {
+//            startActivity(new Intent(mContext, TestActivityForFullSdk.class));
+//        }
 
         setContentView(R.layout.cameralist_page);
 
@@ -475,20 +475,20 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
             mValidCount = 0;
         }
         // 短时间内连续点击至少5次，则打开测试页面
-        if (mValidCount >= 5) {
-            startActivity(new Intent(mContext, TestActivityForFullSdk.class));
-            showToast("test!!!");
-            mValidCount = 0;
-        }
+//        if (mValidCount >= 5) {
+//            startActivity(new Intent(mContext, TestActivityForFullSdk.class));
+//            showToast("test!!!");
+//            mValidCount = 0;
+//        }
         mLastClickTime = currentTime;
     }
 
     private int mValidCount = 0;
     private long mLastClickTime = 0;
 
-    public void onClickMoreFeatures(View view) {
-        startActivity(new Intent(this, MoreFeaturesEntranceActivity.class));
-    }
+//    public void onClickMoreFeatures(View view) {
+//        startActivity(new Intent(this, MoreFeaturesEntranceActivity.class));
+//    }
 
     private class GetCamersInfoListTask extends AsyncTask<Void, Void, List<EZDeviceInfo>> {
         private boolean mHeaderOrFooter;

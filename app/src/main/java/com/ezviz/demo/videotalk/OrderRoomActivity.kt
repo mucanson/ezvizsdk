@@ -50,7 +50,7 @@ class OrderRoomActivity : AppCompatActivity() {
         appid = edt_appId.text.toString()
         password = edt_passwd.text.toString()
         customerId = edt_nick.text.toString()
-        if (TextUtils.isEmpty(customerId)){
+        if (TextUtils.isEmpty(customerId)) {
             Toast.makeText(this, "请输入customerId", Toast.LENGTH_SHORT).show()
             return
         }
@@ -61,21 +61,21 @@ class OrderRoomActivity : AppCompatActivity() {
             height = Integer.valueOf(edt_height.text.toString())
             bitrate = Integer.valueOf(edt_bitrate.text.toString())
             fps = Integer.valueOf(edt_fps.text.toString())
-        }catch (e : Exception){
+        } catch (e: Exception) {
 
         }
 
-        val intent = Intent(this, EZRtcTestActivity::class.java)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_APP_ID, appid)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_USER_ID, customerId)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PASSWORD, password)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_LIMIT, limit)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_WIDTH, width)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_HEIGHT, height)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_FPS, fps)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_BITRATE, bitrate * 1024)
-            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_OPUS, cb_opus.isChecked)
-        startActivityForResult(intent, 100)
+//        val intent = Intent(this, EZRtcTestActivity::class.java)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_APP_ID, appid)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_USER_ID, customerId)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PASSWORD, password)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_LIMIT, limit)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_WIDTH, width)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_HEIGHT, height)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_FPS, fps)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_BITRATE, bitrate * 1024)
+//            .putExtra(EZRtcTestActivity.InIntentKeysAndValues.KEY_PARAM_OPUS, cb_opus.isChecked)
+//        startActivityForResult(intent, 100)
+//    }
     }
-
 }

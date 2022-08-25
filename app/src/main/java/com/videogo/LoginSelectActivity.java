@@ -26,7 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.videogo.ui.LanDevice.LanDeviceActivity;
+//import com.videogo.ui.LanDevice.LanDeviceActivity;
 import com.videogo.ui.cameralist.EZCameraListActivity;
 import com.videogo.ui.util.ActivityUtils;
 
@@ -101,10 +101,10 @@ public class LoginSelectActivity extends RootActivity implements OnClickListener
                 //joinQQGroup(name);
                 //EZAuthAPI.sendOpenPage(this, EZAuthAPI.EZAuthSDKOpenPage.OpenPage_DeviceList, EZAuthAPI.EZAuthPlatform.EZVIZ);
                 break;
-            case R.id.btn_landevice:
-                intent = new Intent(LoginSelectActivity.this, LanDeviceActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.btn_landevice:
+//                intent = new Intent(LoginSelectActivity.this, LanDeviceActivity.class);
+//                startActivity(intent);
+//                break;
             default:
                 break;
         }

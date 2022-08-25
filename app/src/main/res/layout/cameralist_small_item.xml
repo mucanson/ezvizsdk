@@ -50,46 +50,49 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="73dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/item_icon_area"
         android:orientation="vertical"
-        android:paddingLeft="5dp" >
+        android:paddingLeft="5dp">
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="20dp"
             android:layout_marginTop="5dp"
             android:orientation="horizontal"
-            android:paddingRight="10dp" >
-	        <TextView
-	            android:id="@+id/camera_name_tv"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:ellipsize="end"
-	            android:paddingLeft="5dp"
-	            android:paddingRight="8dp"
-	            android:singleLine="true"
-	            android:text="camera1"
-	            android:textColor="#333333"
-	            android:textSize="15sp" />
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/camera_name_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:paddingLeft="5dp"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:text="camera1"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
             <ImageButton
                 android:id="@+id/camera_del_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="40px"
-                android:gravity="center"
                 android:background="@null"
-                android:visibility="gone"
-                android:src="@drawable/palyback_close_selector" />	        
-		</LinearLayout>
-		
+                android:gravity="center"
+                android:src="@drawable/palyback_close_selector"
+                android:visibility="gone" />
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="40dp"
+            android:layout_marginTop="4dp"
             android:gravity="left|center_vertical|start"
             android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:paddingRight="15dp" >
+            android:paddingRight="15dp">
 
             <RelativeLayout
                 android:id="@+id/tab_remoteplayback_rl"
@@ -100,7 +103,7 @@
                 android:layout_weight="3"
                 android:background="@null"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/tab_remoteplayback_btn"
@@ -111,6 +114,7 @@
                     android:gravity="center"
                     android:src="@drawable/open_cameralist_remotepb_selector" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/tab_alarmlist_rl"
                 android:layout_width="fill_parent"
@@ -120,7 +124,7 @@
                 android:layout_weight="3"
                 android:background="@null"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/tab_alarmlist_btn"
@@ -130,6 +134,7 @@
                     android:gravity="center"
                     android:src="@drawable/open_cameralist_alarmlist_selector" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/tab_setdevice_rl"
                 android:layout_width="fill_parent"
@@ -139,7 +144,7 @@
                 android:layout_weight="3"
                 android:background="@null"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/tab_setdevice_btn"
@@ -149,6 +154,7 @@
                     android:gravity="center"
                     android:src="@drawable/open_cameralist_setup_selector" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/tab_video_talk_rl"
                 android:layout_width="fill_parent"
@@ -158,17 +164,18 @@
                 android:layout_weight="3"
                 android:background="@android:color/white"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/tab_video_talk_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@null"  
+                    android:background="@null"
                     android:gravity="center"
                     android:src="@drawable/play_video" />
             </RelativeLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="40dp"
@@ -176,8 +183,8 @@
             android:layout_marginBottom="5dp"
             android:gravity="center_vertical|left"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:paddingRight="5dp" >
+            android:paddingRight="5dp"
+            android:visibility="gone">
 
             <RelativeLayout
                 android:id="@+id/tab_devicepicture_rl"
@@ -189,7 +196,7 @@
                 android:background="@drawable/small_button_cameralist"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="gone" >
+                android:visibility="gone">
 
                 <ImageButton
                     android:id="@+id/tab_devicepicture_btn"
@@ -200,6 +207,7 @@
                     android:gravity="center"
                     android:src="@drawable/capturebtn_selector" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/tab_devicevideo_rl"
                 android:layout_width="fill_parent"
@@ -210,7 +218,7 @@
                 android:background="@drawable/small_button_cameralist"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="gone" >
+                android:visibility="gone">
 
                 <ImageButton
                     android:id="@+id/tab_devicevideo_btn"
@@ -220,7 +228,8 @@
                     android:background="@drawable/cameralist_button_selector"
                     android:gravity="center"
                     android:src="@drawable/playback_cut_btn_selector" />
-            </RelativeLayout>            
+            </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/tab_devicedefence_rl"
                 android:layout_width="fill_parent"
@@ -230,7 +239,7 @@
                 android:layout_weight="3"
                 android:background="@drawable/small_button_cameralist"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/tab_devicedefence_btn"
@@ -239,9 +248,9 @@
                     android:layout_centerHorizontal="true"
                     android:background="@drawable/cameralist_button_selector"
                     android:gravity="center"
-                    android:src="@drawable/my_switch_selector"/>
-            </RelativeLayout>            
-        </LinearLayout>        
+                    android:src="@drawable/my_switch_selector" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

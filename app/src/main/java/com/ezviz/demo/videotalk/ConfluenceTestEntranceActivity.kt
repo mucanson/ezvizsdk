@@ -29,9 +29,9 @@ class ConfluenceTestEntranceActivity : AppCompatActivity() {
         }
     }
 
-    fun joinRoom(view: View) {
-        Intent(this, JoinRoomActivity::class.java).run {
-            startActivityForResult(this, 100)
-        }
-    }
+//    fun joinRoom(view: View) {
+//        Intent(this, JoinRoomActivity::class.java).run {
+//            startActivityForResult(this, 100)
+//        }
+//    }
 }

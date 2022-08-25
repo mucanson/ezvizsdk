@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.ezviz.opensdk.auth.EZAuthAPI;
 import com.videogo.exception.BaseException;
 import com.videogo.openapi.bean.EZDeviceInfo;
-import com.videogo.ui.LanDevice.LanDeviceActivity;
+//import com.videogo.ui.LanDevice.LanDeviceActivity;
 
 import java.util.ArrayList;
 
@@ -126,13 +126,13 @@ public class OptionActivity extends RootActivity {
             }
         });
 
-        findViewById(R.id.btn_landevice).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent  intent = new Intent(OptionActivity.this, LanDeviceActivity.class);
-                startActivity(intent);
-            }
-        });
+//        findViewById(R.id.btn_landevice).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent  intent = new Intent(OptionActivity.this, LanDeviceActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 

@@ -15,7 +15,7 @@ import com.videogo.util.LogUtil;
 import ezviz.ezopensdk.R;
 
 public class LanDevicePlayActivity extends Activity implements SurfaceHolder.Callback {
-    private static final String TAG = LanDeviceActivateActivity.class.getName();
+    //private static final String TAG = LanDeviceActivateActivity.class.getName();
     private SurfaceView mSurfaceView;
     private SurfaceHolder mSurfaceHolder;
     EZPlayer mEZPlayer;
@@ -85,7 +85,7 @@ public class LanDevicePlayActivity extends Activity implements SurfaceHolder.Cal
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            LogUtil.d(TAG,"play description what = "+msg.what);
+            //LogUtil.d(TAG,"play description what = "+msg.what);
             switch (msg.what) {
 
                 case EZConstants.EZRealPlayConstants.MSG_REALPLAY_PLAY_SUCCESS:
