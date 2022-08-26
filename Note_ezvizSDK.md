@@ -1,6 +1,6 @@
 
 
-**Delete Func:
+**Delete Func:**
 - com.ezviz.demo.videotalk.JoinRoomActivity
 - com.ezviz.demo.common.MoreFeaturesEntranceActivity
 - .debug.TestActivityForFullSdk
