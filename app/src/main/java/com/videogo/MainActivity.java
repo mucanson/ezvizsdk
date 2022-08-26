@@ -52,7 +52,7 @@ public class MainActivity extends RootActivity {
     private EditText mAuthET;
     private EditText mAppKeyET;
     private EditText mAccessTokenET;
-    private EditText mSpecifiedDeviceET;
+    //private EditText mSpecifiedDeviceET;
     // token登录参数
     public static SdkInitParams mInitParams;
     // 萤石云账号登录参数
@@ -61,12 +61,12 @@ public class MainActivity extends RootActivity {
     private BroadcastReceiver mLoginResultReceiver;
     
     // JuneCheng's AppKey
-    private final static String APPKEY_JC = "请输入你的appkey";
-    private final static String TOKEN_JC = "请输入你的accessToken";
+//    private final static String APPKEY_JC = "请输入你的appkey";
+//    private final static String TOKEN_JC = "请输入你的accessToken";
     // 开发者反馈问题提供的账号信息
-    private final static String APPKEY_DEV = "请输入你的appkey";
-    private final static String TOKEN_DEV = "请输入你的accessToken";
-    private final static String DEVICE_DEV = "请输入你的设备序列号";
+    private final static String APPKEY_DEV = "";
+    private final static String TOKEN_DEV = "";
+    //private final static String DEVICE_DEV = "请输入你的设备序列号";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,20 +78,21 @@ public class MainActivity extends RootActivity {
 
         mAppKeyET.setText(APPKEY_DEV);
         mAccessTokenET.setText(TOKEN_DEV);
-        mSpecifiedDeviceET.setText(DEVICE_DEV);
+        //mSpecifiedDeviceET.setText(DEVICE_DEV);
     }
 
     /**
      * 通过AccessToken进行体验
      */
     public void onClickStartExperience(View view) {
+
         if (checkLoginInfo()) {
             SdkInitParams sdkInitParams = SdkInitParams.createBy(mCurrentServerArea);
             sdkInitParams.appKey = getValidText(mAppKeyET.getText().toString());
             sdkInitParams.accessToken = getValidText(mAccessTokenET.getText().toString());
             sdkInitParams.openApiServer = getValidText(mApiET.getText().toString());
             sdkInitParams.openAuthApiServer = getValidText(mAuthET.getText().toString());
-            sdkInitParams.specifiedDevice = getValidText(mSpecifiedDeviceET.getText().toString());
+            //sdkInitParams.specifiedDevice = getValidText(mSpecifiedDeviceET.getText().toString());
             SdkInitTool.initSdk(getApplication(), sdkInitParams);
             new Thread(() -> {
                 showLoginAnim(true);
@@ -108,35 +109,35 @@ public class MainActivity extends RootActivity {
     /**
      * 通过萤石账号进行体验
      */
-    public void onClickLoginByEzvizAccount(View view) {
-        if (mCurrentServerArea == null || mCurrentServerArea.defaultOpenAuthAppKey == null) {
-            toast("Error occurred! Please try to use demo with appKey & accessToken.");
-            return;
-        }
-        mSdkInitParams = SdkInitParams.createBy(mCurrentServerArea);
-        mSdkInitParams.openApiServer = getValidText(mApiET.getText().toString());
-        mSdkInitParams.openAuthApiServer = getValidText(mAuthET.getText().toString());
-        SdkInitTool.initSdk(getApplication(), mSdkInitParams);
-        registerLoginResultReceiver();
-        getOpenSDK().openLoginPage();
-    }
+//    public void onClickLoginByEzvizAccount(View view) {
+//        if (mCurrentServerArea == null || mCurrentServerArea.defaultOpenAuthAppKey == null) {
+//            toast("Error occurred! Please try to use demo with appKey & accessToken.");
+//            return;
+//        }
+//        mSdkInitParams = SdkInitParams.createBy(mCurrentServerArea);
+//        mSdkInitParams.openApiServer = getValidText(mApiET.getText().toString());
+//        mSdkInitParams.openAuthApiServer = getValidText(mAuthET.getText().toString());
+//        SdkInitTool.initSdk(getApplication(), mSdkInitParams);
+//        registerLoginResultReceiver();
+//        getOpenSDK().openLoginPage();
+//    }
 
     public void jcTestClick(View view) {
-        mSpecifiedDeviceET.setText("");
-        SdkInitParams sdkInitParams = SdkInitParams.createBy(ASIA);
-        sdkInitParams.appKey = APPKEY_JC;
-        sdkInitParams.accessToken = TOKEN_JC;
-        sdkInitParams.specifiedDevice = "";
-        SdkInitTool.initSdk(getApplication(), sdkInitParams);
-        new Thread(() -> {
-            showLoginAnim(true);
-            if (checkAppKeyAndAccessToken()) {
-                // 保存相关信息
-                saveLastSdkInitParams(sdkInitParams);
-                jumpToCameraListActivity();
-            }
-            showLoginAnim(false);
-        }).start();
+        //mSpecifiedDeviceET.setText("");
+//        SdkInitParams sdkInitParams = SdkInitParams.createBy(ASIA);
+//        sdkInitParams.appKey = APPKEY_JC;
+//        sdkInitParams.accessToken = TOKEN_JC;
+//        //sdkInitParams.specifiedDevice = "";
+//        SdkInitTool.initSdk(getApplication(), sdkInitParams);
+//        new Thread(() -> {
+//            showLoginAnim(true);
+//            if (checkAppKeyAndAccessToken()) {
+//                // 保存相关信息
+//                saveLastSdkInitParams(sdkInitParams);
+//                jumpToCameraListActivity();
+//            }
+//            showLoginAnim(false);
+//        }).start();
     }
 
     /**
@@ -327,7 +328,7 @@ public class MainActivity extends RootActivity {
         mAccessTokenET = findViewById(R.id.et_access_token);
         mApiET = findViewById(R.id.et_api_url);
         mAuthET = findViewById(R.id.et_auth_server);
-        mSpecifiedDeviceET = findViewById(R.id.et_specified_device);
+        //mSpecifiedDeviceET = findViewById(R.id.et_specified_device);
 
         SdkInitParams sdkInitParams = getLastSdkInitParams();
         if (sdkInitParams != null) {
@@ -336,7 +337,7 @@ public class MainActivity extends RootActivity {
                 mAccessTokenET.setText(EZOpenSDK.getInstance().getEZAccessToken().getAccessToken());
                 mApiET.setText(sdkInitParams.openApiServer);
                 mAuthET.setText(sdkInitParams.openAuthApiServer);
-                mSpecifiedDeviceET.setText(sdkInitParams.specifiedDevice);
+                //mSpecifiedDeviceET.setText(sdkInitParams.specifiedDevice);
             } catch (Exception e) {
                 LogUtil.d(TAG, "failed to load AccessToken");
             }

@@ -9,7 +9,7 @@ public class SdkInitParams {
     public int serverAreaId;
     public String openApiServer;
     public String openAuthApiServer;
-    public String specifiedDevice;
+    //public String specifiedDevice;
     public boolean usingGlobalSDK;
 
     private SdkInitParams(){}
@@ -27,7 +27,7 @@ public class SdkInitParams {
             sdkInitParams.openApiServer = serverArea.openApiServer;
             sdkInitParams.openAuthApiServer = serverArea.openAuthApiServer;
             sdkInitParams.usingGlobalSDK = serverArea.usingGlobalSDK;
-            sdkInitParams.specifiedDevice = "";
+            //sdkInitParams.specifiedDevice = "";
         }
         return sdkInitParams;
     }

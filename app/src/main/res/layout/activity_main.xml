@@ -16,9 +16,9 @@
         android:paddingRight="30dp"
         android:visibility="visible">
 
-            <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="244dp"
+        <ImageView
+            android:layout_width="411dp"
+            android:layout_height="398dp"
             android:clickable="true"
             android:onClick="jcTestClick"
             android:src="@drawable/login_logo" />
@@ -26,7 +26,7 @@
         <!--服务器区域 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingBottom="10dp">
@@ -40,14 +40,15 @@
             <Spinner
                 android:id="@+id/sp_server_area"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_height="3dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="invisible" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/explain_of_server_area"
-                android:textSize="10dp" />
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="@string/explain_of_server_area"-->
+            <!--                android:textSize="10dp" />-->
 
         </LinearLayout>
 
@@ -58,17 +59,18 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/string_apiurl"
-                android:textSize="18dp" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/string_apiurl"-->
+<!--                android:textSize="18dp" />-->
 
             <EditText
                 android:id="@+id/et_api_url"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="10dp" />
+                android:layout_height="3dp"
+                android:textSize="10dp"
+                android:visibility="invisible" />
 
         </LinearLayout>
 
@@ -79,17 +81,18 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/string_authurl"
-                android:textSize="18dp" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/string_authurl"-->
+<!--                android:textSize="18dp" />-->
 
             <EditText
                 android:id="@+id/et_auth_server"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="10dp" />
+                android:layout_height="3dp"
+                android:textSize="10dp"
+                android:visibility="invisible" />
 
         </LinearLayout>
 
@@ -142,22 +145,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/specified_device"
-                android:textSize="18dp" />
-
-            <EditText
-                android:id="@+id/et_specified_device"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/tip_specified_device"
-                android:textSize="10dp" />
-
-        </LinearLayout>
+            android:orientation="vertical" />
 
         <!-- token登录按钮-->
         <Button
@@ -177,7 +165,8 @@
             android:text="@string/login_by_ezviz_account"
             android:textColor="@color/blue_text"
             android:textSize="16dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

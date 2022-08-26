@@ -184,10 +184,10 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
 
         // 只展示单个设备
         String sdkInitParamStr = SpTool.obtainValue(ValueKeys.SDK_INIT_PARAMS);
-        if (sdkInitParamStr != null) {
-            SdkInitParams mInitParams = new Gson().fromJson(sdkInitParamStr, SdkInitParams.class);
-            mSingleDeviceSerial = mInitParams.specifiedDevice;
-        }
+//        if (sdkInitParamStr != null) {
+//            SdkInitParams mInitParams = new Gson().fromJson(sdkInitParamStr, SdkInitParams.class);
+//            mSingleDeviceSerial = mInitParams.specifiedDevice;
+//        }
         if (!TextUtils.isEmpty(mSingleDeviceSerial)) {
             Log.e(TAG, "only show the device which serial is " + mSingleDeviceSerial);
         }
@@ -467,24 +467,24 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
     /**
      * 多次点击打开调试页面
      */
-    public void onClickTryOpenTestPage(View view) {
-        long currentTime = System.currentTimeMillis();
-        if (currentTime - mLastClickTime < 1000) {
-            mValidCount++;
-        } else {
-            mValidCount = 0;
-        }
-        // 短时间内连续点击至少5次，则打开测试页面
-//        if (mValidCount >= 5) {
-//            startActivity(new Intent(mContext, TestActivityForFullSdk.class));
-//            showToast("test!!!");
+//    public void onClickTryOpenTestPage(View view) {
+//        long currentTime = System.currentTimeMillis();
+//        if (currentTime - mLastClickTime < 1000) {
+//            mValidCount++;
+//        } else {
 //            mValidCount = 0;
 //        }
-        mLastClickTime = currentTime;
-    }
+//        // 短时间内连续点击至少5次，则打开测试页面
+////        if (mValidCount >= 5) {
+////            startActivity(new Intent(mContext, TestActivityForFullSdk.class));
+////            showToast("test!!!");
+////            mValidCount = 0;
+////        }
+//        mLastClickTime = currentTime;
+//    }
 
-    private int mValidCount = 0;
-    private long mLastClickTime = 0;
+//    private int mValidCount = 0;
+//    private long mLastClickTime = 0;
 
 //    public void onClickMoreFeatures(View view) {
 //        startActivity(new Intent(this, MoreFeaturesEntranceActivity.class));

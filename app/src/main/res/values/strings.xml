@@ -529,7 +529,7 @@
     <string name="string_authurl">"WebUrl:"</string>
     <string name="string_deviceserial">"device_serial:"</string>
     <string name="server_area">ServerArea:</string>
-    <string name="start_to_experience">start to experience !</string>
+    <string name="start_to_experience">CONNECT</string>
     <string name="explain_of_app_key">obtain from developer website or technical support</string>
     <string name="explain_of_access_token">obtain from developer website or technical support</string>
     <string name="explain_of_server_area">Note: choose area according to country of using your country</string>
