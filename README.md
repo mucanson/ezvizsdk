@@ -19,3 +19,4 @@
 - com.ezviz.demo.videotalk.MultiVideoTalkActivity
 - com.ezviz.demo.videotalk.EZRtcTestActivity
 - com.ezviz.demo.common.EZP2pTestActivity
+- com.ezviz.demo.other.DataConfig.kt
