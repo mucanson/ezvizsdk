@@ -5,6 +5,7 @@
 [Doc Link EN](https://open.ys7.com/doc/en/4.x/android-sdk-en.html)
 
 [SDK Full Link](https://github.com/Ezviz-Open/EzvizSDK-Android)
+
 # Delete Func:
 - com.ezviz.demo.videotalk.JoinRoomActivity
 - com.ezviz.demo.common.MoreFeaturesEntranceActivity
