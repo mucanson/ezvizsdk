@@ -49,12 +49,8 @@ class VideoTalkView(context: Context, val mEZMeetingCall: EZMeetingCall) {
         cameraLayout = rootView.findViewById(R.id.camera_layout)
         val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val width = wm.defaultDisplay.width
-//        val height = wm.defaultDisplay.height
+
         val lp = cameraLayout.layoutParams
-//        lp.width = width / 2
-//        lp.height = width / 2
-//        cameraLayout.layoutParams = lp
-//        checkMic.isChecked = true
         checkVideo.setOnCheckedChangeListener { _, isChecked ->
             cameraView.visibility = if (isChecked) View.VISIBLE else View.GONE
         }
@@ -65,8 +61,6 @@ class VideoTalkView(context: Context, val mEZMeetingCall: EZMeetingCall) {
             }
         }
         handler = Handler(Looper.getMainLooper())
-        // 启动计时器
-//        handler?.postDelayed(runnable, 1000)
     }
 
     fun reset() {
@@ -77,11 +71,8 @@ class VideoTalkView(context: Context, val mEZMeetingCall: EZMeetingCall) {
         usernameTv.text = "name:"
         timeTv.text = "00:00"
         joinTime = System.currentTimeMillis()
-        // 停止计时器
-//        handler?.removeCallbacks(runnable)
     }
 
-    //    fun joinRoom(clientId: Int, username: String) {
     fun joinRoom(clientId: Int, username: String, volume: Int) {
         this.username = username
         this.clientId = clientId
@@ -90,13 +81,6 @@ class VideoTalkView(context: Context, val mEZMeetingCall: EZMeetingCall) {
         usernameTv.text = "音量:$volume"
 
         handler?.postDelayed(runnable, 1000)
-        // 启动计时器
-//        if(isFirstJoinRoom){
-//            timeTv.text = "00:00"
-//            joinTime = System.currentTimeMillis()
-//            handler?.postDelayed(runnable, 1000)
-//        }
-//        isFirstJoinRoom = false
     }
 
 

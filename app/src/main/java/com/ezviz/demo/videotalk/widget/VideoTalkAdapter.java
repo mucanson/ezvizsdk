@@ -1,34 +1,22 @@
 package com.ezviz.demo.videotalk.widget;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.ezviz.demo.model.VideoTalkBean;
 import com.ezviz.sdk.videotalk.sdk.EZMeetingCall;
-
 import java.util.List;
-import java.util.zip.Inflater;
-
-import ezviz.ezopensdk.R;
 
 public class VideoTalkAdapter extends RecyclerView.Adapter<VideoTalkAdapter.MyViewHolder>{
 
-    //private List<View> clientList;
+
     private EZMeetingCall ezMeetingCall;
     private Context mContext;
-    //    private List<String> userNameList;
-//    private List<Integer> clientIdList;
     private List<VideoTalkBean> list;
     private View hostView;
-
     private List<VideoTalkBean> videoTalkBeanList;
-
 
     public VideoTalkAdapter(EZMeetingCall ezMeetingCall, Context mContext, List<VideoTalkBean> videoTalkBeanList, View hostView){
         //this.clientList = clientList;
@@ -48,13 +36,11 @@ public class VideoTalkAdapter extends RecyclerView.Adapter<VideoTalkAdapter.MyVi
 
     public void setData(List<VideoTalkBean> videoTalkBeans ){
         videoTalkBeanList = videoTalkBeans;
-//        notifyDataSetChanged();
         notifyItemInserted(videoTalkBeans.size()-1);
     }
 
     public void changeData(List<VideoTalkBean> videoTalkBeans, int position){
         videoTalkBeanList = videoTalkBeans;
-//        notifyItemChanged(position, "aaa");
         notifyItemChanged(position);
     }
 
@@ -95,25 +81,9 @@ public class VideoTalkAdapter extends RecyclerView.Adapter<VideoTalkAdapter.MyVi
 
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull List<Object> payloads) {
-//        if(payloads==null){
-//            onBindViewHolder(holder, position);
-//        }else{
-//            TextView usernameTv  = holder.itemView.findViewById(R.id.username_tv);
-//            usernameTv.setText("音量:"+videoTalkBeanList.get(position).getVolume());
-//        }
-//    }
-
     @Override
     public int getItemViewType(int position) {
-//        videoTalkBeans.get(position)
-//        if(videoTalkBeanList.get(position).isHost()){
-//            return 0;
-//        }else{
         return 1;
-//        }
-
     }
 
 

@@ -538,7 +538,7 @@
     <string name="tip_of_bad_net">can not connect to server, please check your phone network!</string>
     <string name="my_devices">Mine</string>
     <string name="share_devices">Share</string>
-    <string name="not_find_any_devices">Not find any Devices !</string>
+    <string name="not_find_any_devices">No device found!</string>
     <string name="login_by_ezviz_account"><u>start experience by ezviz account</u></string>
     <string name="press_again_to_exit">Press again to exit!</string>
     <string name="app_closed">App closed!</string>

@@ -10,11 +10,6 @@ import com.videogo.util.LogUtil
 import com.videogo.util.Utils
 import ezviz.ezopensdk.R
 
-/**
- * 角度尺
- * Created by huchenxi on 2017/4/27.
- */
-
 class PtzControlAngleView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
 
 

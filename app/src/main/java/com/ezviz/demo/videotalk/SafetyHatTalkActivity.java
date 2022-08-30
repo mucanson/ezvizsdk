@@ -42,6 +42,7 @@ import com.ezviz.videotalk.JNAApi;
 import com.ezviz.videotalk.debug.DebugUtils;
 import com.ezviz.videotalk.jna.BavClientJoinInfo;
 import com.videogo.exception.BaseSdkRuntimeException;
+import com.videogo.openapi.BuildConfig;
 
 import org.json.JSONObject;
 
@@ -50,7 +51,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import ezviz.ezopensdk.BuildConfig;
+//import ezviz.ezopensdk.BuildConfig;
 import ezviz.ezopensdk.R;
 import ezviz.ezopensdkcommon.common.LogUtil;
 
@@ -205,9 +206,6 @@ public class SafetyHatTalkActivity extends Activity {
             onPermissionsGranted();
         }
 
-//        if (BuildConfig.DEBUG) {
-//            DebugUtils.startSaveLogToFile(getApplicationContext());
-//        }
     }
 
     private void initData() {
@@ -219,17 +217,6 @@ public class SafetyHatTalkActivity extends Activity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-//        if ((KeyEvent.KEYCODE_VOLUME_UP == keyCode ||KeyEvent.KEYCODE_VOLUME_DOWN == keyCode)
-//                && (TalkStateEnum.CALLER_CALLING == mCurrentTalkState || TalkStateEnum.ANSWER_BEING_CALLED == mCurrentTalkState)){
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    showToast("通话开始后才可以调整音量");
-//                }
-//            });
-//            return true;
-//        }
 
         return super.onKeyDown(keyCode, event);
     }
@@ -284,14 +271,6 @@ public class SafetyHatTalkActivity extends Activity {
             LogUtil.e(TAG, "error init params：mRole");
             return false;
         }
-
-//        mEzvizVideoCall.setLogCallBack(new EZLogCallback() {
-//            @Override
-//            public void onRcvLog(int logType, String log) {
-//                String logMore = "log type " + logType + ", " + "log is: " + log;
-//                Log.i(TAG, logMore);
-//            }
-//        });
 
         if (mRole == WatchVideoTalkActivity.InIntentKeysAndValues.VALUE_CALLER) {
             createCall();
@@ -403,11 +382,7 @@ public class SafetyHatTalkActivity extends Activity {
     }
 
     private void startVoiceTalk() {
-//        EZPlayer mEZPlayer = EZOpenSDK.getInstance().createPlayer(mWatchSerial, 1);
-//        mEZPlayer.openSound();
-//        mEZPlayer.setSpeakerphoneOn(true);
-////        mEZPlayer.setHandler(new VoiceHandler());
-//        mEZPlayer.startVoiceTalk();
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -453,13 +428,6 @@ public class SafetyHatTalkActivity extends Activity {
                     .placeholder(R.drawable.video_talk_sdk_placeholder_images_user)
                     .into(imgOfRemote);
 
-//            // 自己头像：高斯模糊处理(高斯模糊程度不够，自己再缩放)
-//            GlideApp.with(this)
-//                    .load(mInIntent.getStringExtra(WatchVideoTalkActivity.InIntentKeysAndValues.KEY_HEAD_PORTRAIT_LOCAL))
-//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                    .transform(new BlurTransformation(this, 25))
-//                    .into(imgOfLocal);
-//            coverVG.setVisibility(View.VISIBLE);
             mNotificationTV.setText(mWatchSerial + "来电...");
 
             mOperationContainer.removeAllViews();
@@ -1120,40 +1088,6 @@ public class SafetyHatTalkActivity extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-
-//        if (mEzvizVideoCall != null) {
-//            mEzvizVideoCall.stopVideoTalk();
-//        }
-//        if (mEzvizVoiceCall != null) {
-//            mEzvizVoiceCall.stopVoiceTalk();
-//        }
-//
-//        if (TalkStateEnum.CALLER_CALLING == mCurrentTalkState && mCallerRingPlayer != null) {
-//            mCallerRingPlayer.stop();
-//        }
-//
-//        if (TalkStateEnum.ANSWER_BEING_CALLED == mCurrentTalkState && mAnswerRingPlayer != null) {
-//            mAnswerRingPlayer.stop();
-//        }
-//
-//        if (TalkStateEnum.CALLER_TALKING == mCurrentTalkState
-//                || TalkStateEnum.CALLER_CALLING == mCurrentTalkState) {
-//            if (TalkStateEnum.CALLER_TALKING == mCurrentTalkState) {
-//                toast3s(getString(R.string.video_talk_sdk_toast_hang_up));
-//            }
-//            mCurrentTalkState = TalkStateEnum.CALLER_TALKED;
-//            finish();
-//        }
-//
-//        if (TalkStateEnum.ANSWER_TALKING == mCurrentTalkState
-//                || TalkStateEnum.ANSWER_BEING_CALLED == mCurrentTalkState) {
-//            if (TalkStateEnum.ANSWER_TALKING == mCurrentTalkState) {
-//                toast3s(getString(R.string.video_talk_sdk_toast_hang_up));
-//            }
-//            mCurrentTalkState = TalkStateEnum.ANSWER_TALKED;
-//            finish();
-//        }
-
     }
 
     @Override

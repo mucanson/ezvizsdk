@@ -138,7 +138,6 @@ public class EZPlayBackListActivity extends RootActivity implements QueryPlayBac
         OnHikItemClickListener, /*Callback*/ TextureView.SurfaceTextureListener, OnClickListener, OnTouchListener,
   ArrayAdapterChangeListener, VerifyCodeInput.VerifyCodeInputListener {
 
-
     // TAG
     private static final String TAG = EZPlayBackListActivity.class.getSimpleName();
 

@@ -24,7 +24,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import com.ezviz.demo.common.CollectDeviceInfoActivity;
+//import com.ezviz.demo.common.CollectDeviceInfoActivity;
 import com.google.gson.Gson;
 import com.videogo.exception.BaseException;
 import com.videogo.openapi.BuildConfig;
@@ -64,7 +64,7 @@ public class MainActivity extends RootActivity {
 //    private final static String APPKEY_JC = "请输入你的appkey";
 //    private final static String TOKEN_JC = "请输入你的accessToken";
     // 开发者反馈问题提供的账号信息
-    private final static String APPKEY_DEV = "";
+    private final static String APPKEY_DEV = "7345b66ce8274a4f8a3eeaf2bc1a18dd";
     private final static String TOKEN_DEV = "";
     //private final static String DEVICE_DEV = "请输入你的设备序列号";
 

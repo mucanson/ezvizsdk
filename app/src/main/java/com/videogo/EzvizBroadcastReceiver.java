@@ -21,12 +21,13 @@ public class EzvizBroadcastReceiver extends BroadcastReceiver {
         } else if (action.equals(Constant.ADD_DEVICE_SUCCESS_ACTION)) {
             String deviceId = intent.getStringExtra(IntentConsts.EXTRA_DEVICE_ID);
             Utils.showToast(context, context.getString(R.string.device_is_added, deviceId));
-        } else if (action.equals(Constant.OAUTH_SUCCESS_ACTION)) {
-            Log.i(TAG, "onReceive: OAUTH_SUCCESS_ACTION");
-            Intent toIntent = new Intent(context, OptionActivity.class);
-            toIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(toIntent);
         }
+//     else if (action.equals(Constant.OAUTH_SUCCESS_ACTION)) {
+    //            Log.i(TAG, "onReceive: OAUTH_SUCCESS_ACTION");
+//            Intent toIntent = new Intent(context, OptionActivity.class);
+//            toIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            context.startActivity(toIntent);
+//        }
     }
 
 }

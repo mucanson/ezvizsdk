@@ -49,7 +49,6 @@ public class SelectCameraInviteDeviceDialog extends DialogFragment{
     protected static final String TAG = "SelectCameraInviteDeviceDialog";
     private PullToRefreshListView mListView = null;
     private View mNoMoreView;
-    private EZCameraListInviteDeviceAdapter mAdapter = null;
     private LinearLayout mNoCameraTipLy = null;
     private LinearLayout mGetCameraFailTipLy = null;
     private TextView mCameraFailTipTv = null;
@@ -76,14 +75,6 @@ public class SelectCameraInviteDeviceDialog extends DialogFragment{
         mActivity = getActivity();
         mListView = (PullToRefreshListView) view.findViewById(R.id.camera_listview);
         mNoMoreView = inflater.inflate(R.layout.no_device_more_footer, null);
-        mAdapter = new EZCameraListInviteDeviceAdapter(mActivity);
-        mAdapter.setOnClickListener(mEZDeviceInfo -> {
-            if (mCameraItemClick != null){
-                mCameraItemClick.onCameraItemClick(mEZDeviceInfo);
-            }
-            dismiss();
-        });
-
         mListView.setLoadingLayoutCreator(new PullToRefreshBase.LoadingLayoutCreator() {
 
             @Override
@@ -97,11 +88,9 @@ public class SelectCameraInviteDeviceDialog extends DialogFragment{
         mListView.setMode(IPullToRefresh.Mode.BOTH);
         mListView.setOnRefreshListener((refreshView, headerOrFooter) -> getCameraInfoList(headerOrFooter));
         mListView.getRefreshableView().addFooterView(mNoMoreView);
-        mListView.setAdapter(mAdapter);
         mListView.getRefreshableView().removeFooterView(mNoMoreView);
 
         mNoCameraTipLy = (LinearLayout) view.findViewById(R.id.no_camera_tip_ly);
-//        mNoCameraTipLy.setOnClickListener(v -> refreshButtonClicked());
         mGetCameraFailTipLy = (LinearLayout) view.findViewById(R.id.get_camera_fail_tip_ly);
         mCameraFailTipTv = (TextView) view.findViewById(R.id.get_camera_list_fail_tv);
         view.findViewById(R.id.camera_list_refresh_btn).setOnClickListener(v -> refreshButtonClicked());
@@ -162,8 +151,6 @@ public class SelectCameraInviteDeviceDialog extends DialogFragment{
                 List<EZDeviceInfo> result = null;
                 if (mHeaderOrFooter) {
                     result = getOpenSDK().getDeviceList(0, 20);
-                } else {
-                    result = getOpenSDK().getDeviceList((mAdapter.getCount() / 20) + (mAdapter.getCount() % 20 > 0 ? 1 : 0), 20);
                 }
                 return result;
 
@@ -190,22 +177,15 @@ public class SelectCameraInviteDeviceDialog extends DialogFragment{
                     for (LoadingLayout layout : mListView.getLoadingLayoutProxy(true, false).getLayouts()) {
                         ((PullToRefreshHeader) layout).setLastRefreshTime(":" + dateText);
                     }
-                    mAdapter.clearItem();
                 }
-                if (mAdapter.getCount() == 0 && result.size() == 0) {
-                    mListView.setVisibility(View.GONE);
-                    mNoCameraTipLy.setVisibility(View.VISIBLE);
-                    mGetCameraFailTipLy.setVisibility(View.GONE);
-                    mListView.getRefreshableView().removeFooterView(mNoMoreView);
-                } else if (result.size() < 20) {
+
+                    if (result.size() < 20) {
                     mListView.setFooterRefreshEnabled(false);
                     mListView.getRefreshableView().addFooterView(mNoMoreView);
                 } else if (mHeaderOrFooter) {
                     mListView.setFooterRefreshEnabled(true);
                     mListView.getRefreshableView().removeFooterView(mNoMoreView);
                 }
-                mAdapter.addItems(result);
-                mAdapter.notifyDataSetChanged();
             }
 
             if (mErrorCode != 0) {
@@ -220,14 +200,8 @@ public class SelectCameraInviteDeviceDialog extends DialogFragment{
                     ActivityUtils.handleSessionException(mActivity);
                     break;
                 default:
-                    if (mAdapter.getCount() == 0) {
-                        mListView.setVisibility(View.GONE);
-                        mNoCameraTipLy.setVisibility(View.GONE);
-                        mCameraFailTipTv.setText(Utils.getErrorTip(mActivity, R.string.get_camera_list_fail, errorCode));
-                        mGetCameraFailTipLy.setVisibility(View.VISIBLE);
-                    } else {
+
                         Utils.showToast(mActivity, R.string.get_camera_list_fail, errorCode);
-                    }
                     break;
             }
         }

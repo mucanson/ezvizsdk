@@ -598,4 +598,19 @@
     <string name="cloud_storage_services_interface">海外云存储服务接口</string>
     <string name="cloud_storage_services_is_supported">此国家支持云存储服务</string>
     <string name="cloud_storage_services_is_not_supported">此国家不支持云存储服务</string>
+    <string name="ip_camera">ip_camera</string>
+    <string name="digital_video_recorder">digital_video_recorder</string>
+    <string name="video_box">video_box</string>
+    <string name="alarm_box">alarm_box</string>
+    <string name="router">router</string>
+    <string name="network_video_recorder">network_video_recorder</string>
+    <string name="doorlock">doorlock</string>
+    <string name="plug">plug</string>
+    <string name="keyboard">keyboard</string>
+    <string name="app_key">app_key</string>
+    <string name="access_token">access_token</string>
+    <string name="string_ezopenurl">string_ezopenurl</string>
+    <string name="string_apiurl">string_apiurl</string>
+    <string name="string_authurl">string_authurl</string>
+    <string name="string_deviceserial">string_deviceserial</string>
 </resources>

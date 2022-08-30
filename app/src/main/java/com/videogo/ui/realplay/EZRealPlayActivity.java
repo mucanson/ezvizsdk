@@ -2484,7 +2484,7 @@ public class EZRealPlayActivity extends RootActivity implements OnClickListener,
                 if (playInfoVg != null) {
                     playInfoVg.setVisibility(View.VISIBLE);
                 }
-                showDecodeType();
+                //showDecodeType();
                 handlePlaySuccess(msg);
                 break;
             case EZRealPlayConstants.MSG_REALPLAY_PLAY_FAIL:
@@ -2538,7 +2538,7 @@ public class EZRealPlayActivity extends RootActivity implements OnClickListener,
                 startRealPlay();
                 break;
             case MSG_GOT_STREAM_TYPE:
-                showStreamType(msg.arg1);
+                //showStreamType(msg.arg1);
                 break;
             default:
                 // do nothing
@@ -2547,80 +2547,80 @@ public class EZRealPlayActivity extends RootActivity implements OnClickListener,
         return false;
     }
 
-    private void showDecodeType() {
-        if (mEZPlayer != null && mEZPlayer.getPlayPort() >= 0) {
-            int intDecodeType = Player.getInstance().getDecoderType(mEZPlayer.getPlayPort());
-            String strDecodeType;
-            if (intDecodeType == 1) {
-                strDecodeType = "hard";
-            } else {
-                strDecodeType = "soft";
-            }
-            String streamTypeMsg = "decode type: " + strDecodeType;
-            TextView streamTypeTv = (TextView) findViewById(R.id.tv_decode_type);
-            if (streamTypeTv != null) {
-                streamTypeTv.setText(streamTypeMsg);
-                streamTypeTv.setVisibility(View.VISIBLE);
-            }
-        }
-    }
+//    private void showDecodeType() {
+//        if (mEZPlayer != null && mEZPlayer.getPlayPort() >= 0) {
+//            int intDecodeType = Player.getInstance().getDecoderType(mEZPlayer.getPlayPort());
+//            String strDecodeType;
+//            if (intDecodeType == 1) {
+//                strDecodeType = "hard";
+//            } else {
+//                strDecodeType = "soft";
+//            }
+//            String streamTypeMsg = "decode type: " + strDecodeType;
+//            TextView streamTypeTv = (TextView) findViewById(R.id.tv_decode_type);
+//            if (streamTypeTv != null) {
+//                streamTypeTv.setText(streamTypeMsg);
+//                streamTypeTv.setVisibility(View.VISIBLE);
+//            }
+//        }
+//    }
 
-    private void showStreamType(int streamType) {
-        String streamTypeMsg = getApplicationContext().getString(R.string.stream_type) + changeIntTypeToStringType(streamType);
-        TextView streamTypeTv = (TextView) findViewById(R.id.tv_stream_type);
-        if (streamTypeTv != null) {
-            streamTypeTv.setText(streamTypeMsg);
-            streamTypeTv.setVisibility(View.VISIBLE);
-        }
-    }
+//    private void showStreamType(int streamType) {
+//        String streamTypeMsg = getApplicationContext().getString(R.string.stream_type) + changeIntTypeToStringType(streamType);
+//        TextView streamTypeTv = (TextView) findViewById(R.id.tv_stream_type);
+//        if (streamTypeTv != null) {
+//            streamTypeTv.setText(streamTypeMsg);
+//            streamTypeTv.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     private String changeIntTypeToStringType(int streamType) {
         String strStreamType;
         switch (streamType) {
             /*
-              取流方式切换到私有流媒体转发模式
+            Switch streaming mode to private streaming mode
              */
             case 0:
                 strStreamType = "private_stream";
                 break;
             /*
-              取流方式切换到P2P模式
+              Switch the streaming mode to P2P mode
              */
             case 1:
                 strStreamType = "p2p";
                 break;
             /*
-              取流方式切换到内网直连模式
+             Switch the streaming mode to the intranet direct connection mode
              */
             case 2:
                 strStreamType = "direct_inner";
                 break;
             /*
-              取流方式切换到外网直连模式
+             Switch the streaming mode to the external network direct connection mode
              */
             case 3:
                 strStreamType = "direct_outer";
                 break;
             /*
-              取流方式切换到云存储回放
+             Switch the streaming mode to cloud storage playback
              */
             case 4:
                 strStreamType = "cloud_playback";
                 break;
             /*
-              取流方式切换到云存储留言
+              Switch to cloud storage message mode
              */
             case 5:
                 strStreamType = "cloud_leave_msg";
                 break;
             /*
-              取流方式切换到反向直连模式
+              Switch to reverse direct connection mode
              */
             case 6:
                 strStreamType = "direct_reverse";
                 break;
             /*
-              取流方式切换到HCNETSDK
+              Switch to HCNETSDK for streaming
              */
             case 7:
                 strStreamType = "hcnetsdk";

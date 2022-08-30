@@ -61,7 +61,7 @@ class WatchVideoTalkActivity : Activity(){
 
     @Suppress("UNUSED_PARAMETER")
     fun onClickJoinRoom(view: View) {
-        thread { answerCall() }
+        thread {answerCall() }
     }
 
     @Suppress("UNUSED_PARAMETER")

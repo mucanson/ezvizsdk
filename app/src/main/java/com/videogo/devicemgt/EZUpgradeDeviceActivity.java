@@ -35,7 +35,7 @@ public class EZUpgradeDeviceActivity extends Activity {
     private EZDeviceVersion mVersion = null;
     private EZDeviceUpgradeStatus mUpgradeStatus = null;
     private Timer mTimer;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

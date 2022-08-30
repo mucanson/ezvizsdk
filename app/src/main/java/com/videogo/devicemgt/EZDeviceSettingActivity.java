@@ -225,7 +225,6 @@ public class EZDeviceSettingActivity extends RootActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        mCloudStateHelper.onResume();
         setupDeviceInfo();
         setupParentLayout();
     }
@@ -233,7 +232,6 @@ public class EZDeviceSettingActivity extends RootActivity {
     @Override
     protected void onPause() {
         super.onPause();
-//        mCloudStateHelper.onPause();
     }
 
     @Override
@@ -258,9 +256,6 @@ public class EZDeviceSettingActivity extends RootActivity {
         if (mEZDeviceInfo != null) {
             // 设备图片部分
             // 设备名字部分
-//            String typeSn = String.format("%s(%s)",
-//                    TextUtils.isEmpty(mDeviceModel.getDisplay()) ? mDevice.getFullModel() : mDeviceModel.getDisplay(),
-//                    mDevice.getDeviceID());
             String typeSn = mEZDeviceInfo.getDeviceName();
             mDeviceSerialTextView.setText(mEZDeviceInfo.getDeviceSerial());
 
@@ -277,20 +272,15 @@ public class EZDeviceSettingActivity extends RootActivity {
             if(bSupportDefence) {
             	mDefenceView.setText(R.string.detail_defend_c1_c2_f1);
                 mDefenceStateView.setTextColor(getResources().getColorStateList(R.color.on_off_text_selector));
-//                mDefenceStateView.setText(mDevice.isDefenceOn() ? R.string.on : R.string.off);
-//                mDefenceStateView.setEnabled(mEZCameraInfo.getDefence() == 1);
                 boolean isDefenceEnable = (mEZDeviceInfo.getDefence() != 0);
                 mDefenceToggleButton.setBackgroundResource(isDefenceEnable ? R.drawable.autologin_on
                         : R.drawable.autologin_off);
                 mDefenceToggleButton.setOnClickListener(mOnClickListener);
             
 				mDefenceLayout.setVisibility(View.VISIBLE);
-//				mDefenceLayout.setTag(supportMode);
-//				mDefenceLayout.setOnClickListener(mOnClickListener); // dont allow to click the list
            }
 
             // 存储状态部分
-
             {
 
                 mStorageNoticeView.setVisibility(View.VISIBLE);
@@ -311,7 +301,6 @@ public class EZDeviceSettingActivity extends RootActivity {
                     mVersionNewestView.setVisibility(View.GONE);
                 }
 
-//                bHasUpgrade = true;// TODO stub
                 if(bHasUpgrade) {
                     mVersionNoticeView.setVisibility(View.VISIBLE);
                     mVersionArrowView.setVisibility(View.VISIBLE);
@@ -328,7 +317,6 @@ public class EZDeviceSettingActivity extends RootActivity {
 
             // 视频图片加密部分
             boolean bSupportEncrypt = true;
-            //if (mDevice.getSupportEncrypt() == DeviceConsts.NOT_SUPPORT || !mDevice.isOnline()) {
             if(!bSupportEncrypt) {
                 mEncryptParentLayout.setVisibility(View.GONE);
             } else {
@@ -339,8 +327,6 @@ public class EZDeviceSettingActivity extends RootActivity {
 
                 mModifyPasswordLayout.setOnClickListener(mOnClickListener);
                 boolean bSupportChangePwd = false;
-//                if ((mEZCameraInfo.getEncryptStatus() != 1))
-                       // || mDevice.getSupportChangeSafePasswd() == DeviceConsts.NOT_SUPPORT) {
                 if(!bSupportChangePwd) {
                     mModifyPasswordLayout.setVisibility(View.GONE);
                 } else {
@@ -352,10 +338,7 @@ public class EZDeviceSettingActivity extends RootActivity {
         }
     }
 
-    private void setupParentLayout() {
-        // 在线父框架
-//        mOnlineParentLayout.setVisibility(mOnlineTimeLayout.getVisibility() & mOfflineNotifyLayout.getVisibility());
-    }
+    private void setupParentLayout() {}
 
     private void setupSafeModePlan(boolean fromServer) {}
 
@@ -375,20 +358,12 @@ public class EZDeviceSettingActivity extends RootActivity {
             }
         } else {
             // 如果关闭，则开启
-//            showDialog(SHOW_DIALOG_SAFE_MODE);
             openSafeMode();
         }
     }
 
     private void openSafeMode() {
         // 首先判断有没有密码，如果有的话，就不需要设置了
-//        if (TextUtils.isEmpty(mDevice.getEncryptPwd()) || mDevice.getEncryptPwd().equals("null")) {
-//            Intent intent = new Intent(DeviceSettingActivity.this, DeviceEncryptPasswordActivity.class);
-//            intent.putExtra("deviceID", mDevice.getDeviceID());
-//            startActivity(intent);
-//        } else {
-//            new OpenEncryptTask().execute();
-//        }
             new OpenEncryptTask().execute(true);
     }
 
@@ -495,8 +470,6 @@ public class EZDeviceSettingActivity extends RootActivity {
     protected void onPrepareDialog(int id, Dialog dialog) {
         if (dialog != null) {
             removeDialog(id);
-//            TextView tv = (TextView) dialog.findViewById(android.R.id.message);
-//            tv.setGravity(Gravity.CENTER);
         }
     }
 
@@ -600,16 +573,6 @@ public class EZDeviceSettingActivity extends RootActivity {
         protected void onPostExecute(Boolean result) {
             super.onPostExecute(result);
             mWaitDialog.dismiss();
-
-//            if (result) {
-////                Intent intent = new Intent(DeviceSettingActivity.this, DeviceWifiListActivity.class);
-////                intent.putExtra("deviceId", mDevice.getDeviceID());
-////                startActivity(intent);
-//            } else if (mErrorCode == HCNetSDKException.NET_DVR_PASSWORD_ERROR) {
-//                showInputDevicePswDlg();
-//            } else {
-//                showToast(R.string.device_wifi_set_no_in_subnet);
-//            }
         }
     }
 
@@ -708,12 +671,8 @@ public class EZDeviceSettingActivity extends RootActivity {
 
             if (result) {
                 showToast(R.string.encrypt_password_open_success);
-//                mDevice.setIsEncrypt(1);
-//                bAction = !bAction;
                 mEZDeviceInfo.setIsEncrypt(bAction ? 1 : 0);
                 mEncryptButton.setBackgroundResource(bAction ? R.drawable.autologin_on : R.drawable.autologin_off);
-//                if (mDevice.getSupportChangeSafePasswd() != DeviceConsts.NOT_SUPPORT)
-//                    mModifyPasswordLayout.setVisibility(View.VISIBLE);
             } else {
                 switch (mErrorCode) {
                     case ErrorCode.ERROR_WEB_NET_EXCEPTION:
@@ -755,7 +714,6 @@ public class EZDeviceSettingActivity extends RootActivity {
             }
 
             try {
-//            	EZCameraInfo cameraInfo = params[0];
                 EzvizApplication.getOpenSDK().deleteDevice(mEZDeviceInfo.getDeviceSerial());
                 return true;
             } catch (BaseException e) {

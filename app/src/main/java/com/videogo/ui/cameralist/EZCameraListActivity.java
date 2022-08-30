@@ -44,7 +44,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ez.stream.EZStreamClientManager;
-import com.ezviz.demo.common.CollectDeviceInfoActivity;
+//import com.ezviz.demo.common.CollectDeviceInfoActivity;
 //import com.ezviz.demo.common.MoreFeaturesEntranceActivity;
 import com.ezviz.demo.videotalk.WatchVideoTalkActivity;
 import com.google.gson.Gson;
@@ -63,7 +63,7 @@ import com.videogo.openapi.bean.EZDeviceInfo;
 import com.videogo.remoteplayback.list.EZPlayBackListActivity;
 import com.videogo.remoteplayback.list.RemoteListContant;
 import com.videogo.scan.main.CaptureActivity;
-import com.videogo.ui.message.EZMessageActivity2;
+//import com.videogo.ui.message.EZMessageActivity2;
 import com.videogo.ui.realplay.EZRealPlayActivity;
 import com.videogo.ui.util.ActivityUtils;
 import com.videogo.ui.util.EZUtils;
@@ -88,11 +88,11 @@ import java.util.List;
 
 import ezviz.ezopensdk.R;
 //import ezviz.ezopensdk.debug.TestActivityForFullSdk;
-import ezviz.ezopensdk.demo.DemoConfig;
-import ezviz.ezopensdk.demo.SdkInitParams;
+//import ezviz.ezopensdk.demo.DemoConfig;
+//import ezviz.ezopensdk.demo.SdkInitParams;
 import ezviz.ezopensdk.demo.SpTool;
 import ezviz.ezopensdk.demo.ValueKeys;
-import ezviz.ezopensdk.preview.MultiScreenPreviewActivity;
+//import ezviz.ezopensdk.preview.MultiScreenPreviewActivity;
 import ezviz.ezopensdkcommon.common.BaseApplication;
 import ezviz.ezopensdkcommon.common.RootActivity;
 
@@ -339,7 +339,7 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
              * 如果是HUB设备，则需要手动输入相应HUB设备和子设备序列号组合后的序列号才能进行取流操作
              */
             private void jumpToDeviceInfoInputPage() {
-                startActivity(new Intent(mContext, CollectDeviceInfoActivity.class));
+                //startActivity(new Intent(mContext, CollectDeviceInfoActivity.class));
             }
 
             @Override
@@ -371,12 +371,12 @@ public class EZCameraListActivity extends RootActivity implements OnClickListene
 
             @Override
             public void onAlarmListClick(BaseAdapter adapter, View view, int position) {
-                mClickType = TAG_CLICK_ALARM_LIST;
-                final EZDeviceInfo deviceInfo = mAdapter.getItem(position);
-                LogUtil.d(TAG, "cameralist is null or cameralist size is 0");
-                Intent intent = new Intent(EZCameraListActivity.this, EZMessageActivity2.class);
-                intent.putExtra(IntentConsts.EXTRA_DEVICE_ID, deviceInfo.getDeviceSerial());
-                startActivity(intent);
+//                mClickType = TAG_CLICK_ALARM_LIST;
+//                final EZDeviceInfo deviceInfo = mAdapter.getItem(position);
+//                LogUtil.d(TAG, "cameralist is null or cameralist size is 0");
+//                Intent intent = new Intent(EZCameraListActivity.this, EZMessageActivity2.class);
+//                intent.putExtra(IntentConsts.EXTRA_DEVICE_ID, deviceInfo.getDeviceSerial());
+//                startActivity(intent);
             }
 
             @Override
